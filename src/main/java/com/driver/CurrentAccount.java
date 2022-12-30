@@ -20,7 +20,7 @@ public class CurrentAccount extends BankAccount{
         this.tradeLicenseId=tradeLicenseId;
     }
 
-    public String valid(String S){
+    private String valid(String S){
         int[] hash = new int[26];
         for (int i = 0; i < S.length(); i++) {
             hash[S.charAt(i) - 'a']++;
