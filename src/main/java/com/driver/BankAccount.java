@@ -40,12 +40,6 @@ public class BankAccount {
         if(Account.equals("")==false){
             return;
         }
-        if(digit==0&&sum!=0){
-            return;
-        }
-        if(sum==0&&digit!=0){
-            return;
-        }
         if(digit>0&&sum>0){
             char a = '0';
             if(ans.equals("")){
