@@ -36,8 +36,14 @@ public class BankAccount {
         this.minBalance=minBalance;
     }
 
-   public void count(String ans,int digit,int sum){
+    public void count(String ans,int digit,int sum){
         if(Account.equals("")==false){
+            return;
+        }
+        if(digit==0&&sum!=0){
+            return;
+        }
+        if(sum==0&&digit!=0){
             return;
         }
         if(digit>0&&sum>0){
@@ -54,7 +60,7 @@ public class BankAccount {
             Account = ans;
             return;
         }
-   }
+    }
     public String generateAccountNumber(int digits, int sum) throws Exception{
         //Each digit of an account number can lie between 0 and 9 (both inclusive)
         //Generate account number having given number of 'digits' such that the sum of digits is equal to 'sum'
@@ -74,12 +80,9 @@ public class BankAccount {
 
     public void withdraw(double amount) throws Exception {
         // Remember to throw "Insufficient Balance" exception, if the remaining amount would be less than minimum balance
-
-      if(minBalance>balance-amount){
+        if(balance>=amount){ balance-=amount;}
+        if(minBalance>balance){
             throw new Exception("Insufficient Balance");
         }
-      else{
-          balance-=amount;
-      }
     }
 }
